@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var length = 0;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -55,7 +55,7 @@ return newPassword
 
 
 
-
+for (i = 0; i < length; i++) {
 
 //function for random lower case letter
 function getRandomLower() {
@@ -76,4 +76,20 @@ function getRandomSymbol() {
 
 
 
-
+}
+//duplicated functions for outside loop
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) +97);
+}
+//function for random upper case latter (numbers are represented on browser character chart)
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+function getRandomSymbol() {
+  var symbols = '!@#$%^&*(){}[]=<>/,.';
+  var index = Math.floor(Math.random() * symbols.length)
+  return symbols.charAt(index)
+}
